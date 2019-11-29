@@ -4,12 +4,14 @@
     - name: Create daemon group
       group:
         name: '{{ daemon_group }}'
+        gid: '{{ daemon_group_id }}'
         state: present
         system: yes
 
     - name: Create daemon user
       user:
         name: '{{ daemon_user }}'
+        uid: '{{ daemon_user_id }}'
         comment: '{{ daemon_comment }}'
         createhome: no
         group: '{{ daemon_group }}'

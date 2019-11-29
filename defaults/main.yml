@@ -1,6 +1,9 @@
 daemon_comment: 'One more daemon'
+daemon_directory: '{{ omit }}'
 daemon_group: '{{ daemon_user }}'
+daemon_group_id: '{{ omit }}'
 daemon_groups: '{{ omit }}'
 daemon_password: ''
 daemon_password_hash_algorithm: 'sha512'
 daemon_password_hash_salt: null  # Set it to some value to get relevant "changed" status on "user" task
+daemon_user_id: '{{ omit }}'

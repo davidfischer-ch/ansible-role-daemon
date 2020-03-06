@@ -1,3 +1,5 @@
+do_daemon: yes
+
 daemon_comment: 'One more daemon'
 daemon_directory: '{{ omit }}'
 daemon_group: '{{ daemon_user }}'

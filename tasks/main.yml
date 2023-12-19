@@ -6,20 +6,22 @@
         name: '{{ daemon_group }}'
         gid: '{{ daemon_group_id }}'
         state: present
-        system: yes
+        system: true
 
     - name: Create daemon user
       user:
         name: '{{ daemon_user }}'
         uid: '{{ daemon_user_id }}'
         comment: '{{ daemon_comment }}'
-        createhome: no
+        createhome: false
         group: '{{ daemon_group }}'
         groups: '{{ daemon_groups }}'
         home: '{{ daemon_directory }}'
         password: '{{ daemon_password|password_hash(daemon_password_hash_algorithm, daemon_password_hash_salt) if daemon_password|length > 0 else omit }}'
         shell: /bin/bash
         state: present
-        system: yes
+        system: true
   become: '{{ do_become }}'
   tags: daemon
+
+...
